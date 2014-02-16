@@ -1,0 +1,4 @@
+*.nw
+node_modules/
+coffee/*.js
+.DS_Store

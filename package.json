@@ -1,0 +1,10 @@
+{
+  "name": "TodoList",
+  "main": "index.html",
+  "dependencies": {
+    "nedb": "~0.10.4"
+  },
+  "window": {
+  	"toolbar": false
+  }
+}

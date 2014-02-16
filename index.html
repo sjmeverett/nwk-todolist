@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Todo List</title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+	</head>
+
+	<body>
+		<div class="container" id="main">
+
+		</div>
+
+		<script type="text/ractive" id="template">
+			<div>
+				<input type="textbox" on-enter="create" placeholder="I need to..." class="form-control" autofocus>
+			</div>
+
+			<ul id="todolist" class="list-unstyled">
+				{{#items:i}}
+					<li class="{{.editing ? 'editing' : ''}} {{.completed ? 'completed' : ''}}">
+						<input type="checkbox" class="check" checked="{{.completed}}">
+						<label on-click="edit">{{description}}</label>
+						<input type="textbox" class="editor" value="{{description}}" on-blur-enter="edited">
+
+						<button class="remove" on-click="remove:{{i}}">
+							<span class="glyphicon glyphicon-remove"></span>
+						</button>
+					</li>
+				{{/items}}
+			</ul>
+		</script>
+
+		<script src="js/Ractive.min.js"></script>
+		<script src="js/Ractive-events-keys.js"></script>
+		<script src="coffee/presenter.js"></script>
+	</body>
+</html>
